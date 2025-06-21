@@ -5,6 +5,9 @@ import * as React from 'react';
 import { Block } from './Block';
 import { type Modifier, type TextInlineNode } from './Text';
 
+import Markdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+
 /* -------------------------------------------------------------------------------------------------
  * TypeScript types and utils
  * -----------------------------------------------------------------------------------------------*/
@@ -158,6 +161,7 @@ const defaultComponents: ComponentsContextValue = {
     underline: (props) => <u>{props.children}</u>,
     strikethrough: (props) => <del>{props.children}</del>,
     code: (props) => <code>{props.children}</code>,
+    markdown: (props) => <Markdown remarkPlugins={[remarkGfm]}>{props.children}</Markdown>
   },
   missingBlockTypes: [],
   missingModifierTypes: [],
