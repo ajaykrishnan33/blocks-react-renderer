@@ -10,6 +10,7 @@ interface TextInlineNode {
   underline?: boolean;
   strikethrough?: boolean;
   code?: boolean;
+  markdown?: boolean;
 }
 
 type Modifier = Exclude<keyof TextInlineNode, 'type' | 'text'>;
